@@ -1,6 +1,6 @@
 // API Routes
 
-const indexhtml = require (`../assets/js/index.js`)
+const indexhtml = require (`../../`)
 
 module.exports = (app) => {
 
