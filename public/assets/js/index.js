@@ -146,3 +146,4 @@ if (window.location.pathname === '/notes.html') {
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 getAndRenderNotes();
+

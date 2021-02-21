@@ -1,5 +1,5 @@
 // API Routes
-const { error } = require("console")
+
 const fs = require (`fs`)
 const app = require (`express`).Router()
 const dbfile = require ("../db/db.json")
@@ -23,7 +23,7 @@ dbfile.push(noteContent)
 fs.writeFileSync("./db/db.json", JSON.stringify(dbfile), (err)=>{if(err){throw err}})
 res.json(dbfile)
 })
-//app.post here createnote object with title, text, id generated randomly. push this into db.json file using writefilesync
+
 
 app.delete("/notes/:id", (req, res) => {
 let notTheNoteYoureDeleting = []
@@ -31,9 +31,7 @@ let db = dbfile
 for (let index = 0; index < db.length; index++) {
     if (db[index].id!=req.params.id){
 notTheNoteYoureDeleting.push(db[index])
-
-
-    }
+}
     
 }
 
@@ -43,6 +41,6 @@ res.json(db)
 }
 )
 
-// }
+
 
 module.exports = app
