@@ -25,22 +25,7 @@ fs.writeFileSync("./db/db.json", JSON.stringify(dbfile))
 res.json(dbfile)
 })
 
-// this will delete the selected entry
-app.delete("/notes/:id", (req, res) => {
-let notTheNoteYoureDeleting = []
-let db = dbfile
-for (let index = 0; index < db.length; index++) {
-    if (db[index].id!=req.params.id){
-notTheNoteYoureDeleting.push(db[index])
-}
-    
-}
-// this will repopulate the db.json file with an updated array after performing the above actions for deletion.
-db = notTheNoteYoureDeleting
-fs.writeFileSync("./db/db.json", JSON.stringify(db))
-res.json(db)
-}
-)
+
 
 
 
